@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão: Agro & Cidade</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <nav class="navbar">
+        <div class="logo">
+            <span class="emoji">🚜</span> Agro<span>Urbano</span> <span class="emoji">🏙️</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#curiosidades">Curiosidades</a></li>
+            <li><a href="#contato">União</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Onde a Terra encontra o Asfalto</h1>
+            <p>Celebrando a harmonia vital entre quem cultiva e quem inova.</p>
+            <button onclick="scrollParaCuriosidades()">Explorar Sabedoria</button>
+        </div>
+        <div class="decoracao-flutuante">
+            <div class="item-decor">🌾</div>
+            <div class="item-decor">🏢</div>
+            <div class="item-decor">🌱</div>
+            <div class="item-decor">🏗️</div>
+        </div>
+    </header>
+
+    <section id="curiosidades" class="curiosidades">
+        <h2 class="titulo-secao">Curiosidades do Agro no Brasil</h2>
+        <div class="grid-curiosidades">
+            <div class="card" onclick="interagirCard(this)">
+                <div class="card-icon">🍊</div>
+                <h3>Líder Mundial</h3>
+                <p>Você sabia que o Brasil é o maior produtor de suco de laranja do mundo? 1 em cada 5 copos consumidos no planeta saem daqui.</p>
+            </div>
+            <div class="card" onclick="interagirCard(this)">
+                <div class="card-icon">🛰️</div>
+                <h3>Agro 5.0</h3>
+                <p>A tecnologia urbana move o campo: satélites e drones são usados para monitorar safras em tempo real, garantindo precisão.</p>
+            </div>
+            <div class="card" onclick="interagirCard(this)">
+                <div class="card-icon">☕</div>
+                <h3>Energia Diária</h3>
+                <p>O café que move as manhãs na cidade vem de um setor que gera milhões de empregos e preserva áreas verdes.</p>
+            </div>
+            <div class="card" onclick="interagirCard(this)">
+                <div class="card-icon">🐄</div>
+                <h3>Sustentabilidade</h3>
+                <p>A integração Lavoura-Pecuária-Floresta (ILPF) une o melhor dos mundos para produzir com baixa emissão de carbono.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido para celebrar a união entre o Campo e a Cidade &copy; 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
