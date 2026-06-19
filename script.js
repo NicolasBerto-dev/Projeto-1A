@@ -1,89 +1,36 @@
 
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+// Alterna entre seções do site
+function mostrarSecao(id) {
+  const secoes = document.querySelectorAll('.secao');
+
+  secoes.forEach(secao => {
+    secao.classList.remove('ativa');
+  });
+
+  document.getElementById(id).classList.add('ativa');
 }
 
-body {
-  background: linear-gradient(to bottom, #e8f5e9, #fff8e1);
-  color: #2e2e2e;
+// Mensagem dinâmica
+function trocarMensagem() {
+  const mensagens = [
+    "O campo e a cidade trabalham juntos para alimentar o mundo 🌎",
+    "A natureza e a tecnologia podem viver em equilíbrio 🌱",
+    "Cada alimento na sua mesa vem dessa conexão incrível 🍞"
+  ];
+
+  const aleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+  document.getElementById("mensagem").innerText = aleatoria;
 }
 
-/* Header */
-header {
-  background: #2e7d32;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+// Curiosidade dinâmica
+function mostrarFato() {
+  const fatos = [
+    "Mais de 70% dos alimentos consumidos nas cidades vêm do campo.",
+    "A tecnologia ajuda o campo a produzir mais com menos impacto ambiental.",
+    "A logística conecta fazendas a supermercados em poucas horas."
+  ];
 
-header h1 {
-  font-size: 1.8rem;
-}
-
-/* Navegação */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  background: #a5d6a7;
-  padding: 10px;
-}
-
-nav button {
-  background: #33691e;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-nav button:hover {
-  background: #558b2f;
-}
-
-/* Conteúdo */
-main {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-.secao {
-  display: none;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.secao.ativa {
-  display: block;
-}
-
-button {
-  margin-top: 10px;
-  padding: 10px;
-  border: none;
-  background: #f9a825;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-button:hover {
-  background: #f57f17;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #2e7d32;
-  color: white;
-  margin-top: 20px;
+  const aleatorio = fatos[Math.floor(Math.random() * fatos.length)];
+  document.getElementById("fato").innerText = aleatorio;
 }
