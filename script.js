@@ -1,36 +1,38 @@
 
 
-// Alterna entre seções do site
-function mostrarSecao(id) {
-  const secoes = document.querySelectorAll('.secao');
+// Lista de itens para o jogo educativo de adivinhação
+const itensJogo = [
+    { nome: "🍎 Maçã Fresca", origem: "campo" },
+    { nome: "🚜 Trator com GPS", origem: "cidade" },
+    { nome: "🥛 Leite Integral", origem: "campo" },
+    { nome: "📱 Smartphone / Aplicativo do Tempo", origem: "cidade" },
+    { nome: "🌽 Milho Verde", origem: "campo" },
+    { nome: "🧪 Fertilizantes Científicos", origem: "cidade" }
+];
 
-  secoes.forEach(secao => {
-    secao.classList.remove('ativa');
-  });
+let itemAtualIndex = 0;
 
-  document.getElementById(id).classList.add('ativa');
-}
+// Função que verifica a resposta do usuário
+function verificarOrigem(escolhaUsuario) {
+    const itemAtual = itensJogo[itemAtualIndex];
+    const feedbackElemento = document.getElementById("resultado-feedback");
 
-// Mensagem dinâmica
-function trocarMensagem() {
-  const mensagens = [
-    "O campo e a cidade trabalham juntos para alimentar o mundo 🌎",
-    "A natureza e a tecnologia podem viver em equilíbrio 🌱",
-    "Cada alimento na sua mesa vem dessa conexão incrível 🍞"
-  ];
+    if (escolhaUsuario === itemAtual.origem) {
+        feedbackElemento.style.color = "#2e7d32"; // Verde para acerto
+        feedbackElemento.innerText = "Parabéns! Você acertou! 🎉";
+    } else {
+        feedbackElemento.style.color = "#c62828"; // Vermelho para erro
+        if (itemAtual.origem === "campo") {
+            feedbackElemento.innerText = "Quase lá! Este item vem da dedicação da terra e do produtor rural (Campo).";
+        } else {
+            feedbackElemento.innerText = "Quase lá! Este item nasce da tecnologia, pesquisa e fábricas (Cidade).";
+        }
+    }
 
-  const aleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
-  document.getElementById("mensagem").innerText = aleatoria;
-}
-
-// Curiosidade dinâmica
-function mostrarFato() {
-  const fatos = [
-    "Mais de 70% dos alimentos consumidos nas cidades vêm do campo.",
-    "A tecnologia ajuda o campo a produzir mais com menos impacto ambiental.",
-    "A logística conecta fazendas a supermercados em poucas horas."
-  ];
-
-  const aleatorio = fatos[Math.floor(Math.random() * fatos.length)];
-  document.getElementById("fato").innerText = aleatorio;
+    // Avança para o próximo item após 2.5 segundos
+    setTimeout(() => {
+        itemAtualIndex = (itemAtualIndex + 1) % itensJogo.length; // Cicla entre os itens
+        document.getElementById("game-item").innerText = itensJogo[itemAtualIndex].nome;
+        feedbackElemento.innerText = ""; // Limpa o feedback
+    }, 2500);
 }
