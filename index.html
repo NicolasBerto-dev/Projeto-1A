@@ -1,68 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Festejando Campo e Cidade</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão Campo-Cidade</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <header>
-    <h1>🌱 Festejando a Conexão entre o Campo e a Cidade 🌆</h1>
-    <p>Uma celebração da união entre a natureza e a vida urbana</p>
-  </header>
 
-  <nav>
-    <button onclick="mostrarSecao('inicio')">Início</button>
-    <button onclick="mostrarSecao('campo')">Campo</button>
-    <button onclick="mostrarSecao('cidade')">Cidade</button>
-    <button onclick="mostrarSecao('conexao')">Conexão</button>
-  </nav>
+    <header>
+        <div class="logo">🌾 Conexão Campo-Cidade 🌆</div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#importancia">Importância</a>
+            <a href="#interativo">Descubra</a>
+        </nav>
+    </header>
 
-  <main>
-    <section id="inicio" class="secao ativa">
-      <h2>Bem-vindo!</h2>
-      <p>
-        Este site celebra a importância da integração entre o campo e a cidade,
-        mostrando como ambos dependem um do outro para existir em equilíbrio.
-      </p>
-      <button onclick="trocarMensagem()">Clique para ver uma mensagem 🌿</button>
-      <p id="mensagem"></p>
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Festejando a Conexão Campo-Cidade</h1>
+            <p>Descubra como a terra que alimenta e a tecnologia que transforma andam de mãos dadas para construir o nosso futuro!</p>
+            <a href="#interativo" class="btn">Começar a Explorar</a>
+        </div>
     </section>
 
-    <section id="campo" class="secao">
-      <h2>🌾 O Campo</h2>
-      <p>
-        O campo é responsável pela produção de alimentos, preservação da natureza e cultivo da vida.
-        Ele fornece recursos essenciais como grãos, frutas, leite e carne.
-      </p>
+    <section id="importancia" class="info-section">
+        <h2>Como essa conexão funciona?</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon">🚜</div>
+                <h3>O que o Campo dá para a Cidade?</h3>
+                <p>Alimentos frescos (frutas, verduras, grãos), matéria-prima para as indústrias, oxigênio puro e a preservação da nossa biodiversidade.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏙️</div>
+                <h3>O que a Cidade dá para o Campo?</h3>
+                <p>Tecnologia avançada (tratores autônomos, drones), maquinários, pesquisas científicas para melhorar o plantio e serviços de saúde/educação.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="cidade" class="secao">
-      <h2>🏙️ A Cidade</h2>
-      <p>
-        A cidade concentra tecnologia, serviços, educação e inovação.
-        É onde a produção do campo ganha transformação e chega às pessoas.
-      </p>
+    <section id="interativo" class="game-section">
+        <h2>Jogo da Origem: De onde vem?</h2>
+        <p class="instructions">Clique nos botões abaixo para descobrir se o item vem originalmente do Campo ou se foi desenvolvido/processado na Cidade!</p>
+        
+        <div class="game-container">
+            <div class="item-box">
+                <span id="game-item">🍎 Maçã Fresca</span>
+            </div>
+            <div class="buttons">
+                <button onclick="verificarOrigem('campo')">Vem do Campo 🌾</button>
+                <button onclick="verificarOrigem('cidade')">Vem da Cidade 🌆</button>
+            </div>
+            <p id="resultado-feedback"></p>
+        </div>
     </section>
 
-    <section id="conexao" class="secao">
-      <h2>🔗 A Conexão Campo-Cidade</h2>
-      <p>
-        Campo e cidade se complementam. Um depende do outro para existir:
-        enquanto o campo alimenta, a cidade desenvolve e distribui.
-      </p>
+    <footer>
+        <p>&copy; 2026 - Cultivando Conhecimento para Todas as Idades.</p>
+    </footer>
 
-      <button onclick="mostrarFato()">Mostrar curiosidade 🌍</button>
-      <p id="fato"></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>🌱 Projeto educativo - Conexão Campo & Cidade 🌆</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
